@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=MSBT Editor Reloaded
+Comment=MSBT Editor Reloaded
+Exec=/usr/bin/MsbtEditor %U
+StartupNotify=true
+Terminal=false
+Icon=msbteditor
+Type=Application
+Categories=Development;Utility;
