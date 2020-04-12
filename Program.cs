@@ -9,7 +9,7 @@ namespace MsbtEditor
 {
 	static class Program
 	{
-#if DEBUG
+#if (DEBUG && OS_WINDOWS)
 		[DllImport("kernel32.dll", SetLastError = true)]
 		static extern bool AllocConsole();
 		[DllImport("kernel32.dll", SetLastError = true)]
@@ -19,7 +19,7 @@ namespace MsbtEditor
 		[STAThread]
 		static void Main(string[] args)
 		{
-#if DEBUG
+#if (DEBUG && OS_WINDOWS)
 			AllocConsole();
 #endif
 
@@ -27,7 +27,7 @@ namespace MsbtEditor
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new frmMain(args));
 
-#if DEBUG
+#if (DEBUG && OS_WINDOWS)
 			FreeConsole();
 #endif
 		}
